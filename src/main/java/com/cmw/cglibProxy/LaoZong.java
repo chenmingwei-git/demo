@@ -22,19 +22,5 @@ public class LaoZong {
         System.out.println("吃饭");
     }
 
-
-    public static void main(String[] args) {
-
-        Calendar calendar = Calendar.getInstance();
-
-        calendar.set(Calendar.YEAR, calendar.get(Calendar.YEAR) - 1);
-        calendar.set(Calendar.MONTH, 8);
-        calendar.set(Calendar.DATE,31);
-
-
-
-        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()) );
-
-    }
 }
 
