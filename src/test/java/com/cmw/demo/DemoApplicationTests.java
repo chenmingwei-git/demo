@@ -1000,26 +1000,22 @@ public class DemoApplicationTests {
 
     @Test
     public void testAge() {
+        People people = new People();
+        people.setId(12);
 
-//        int a = PubCheckFun.getPersonAge("2008-02-29");
-//        System.out.println("》》》"+a);
+        People people1 =null;
+        people1 = people;
 
-        String s1 = "LV3";
-        String s2 = "LV2";
-        System.out.println(s1.compareTo(s2));
+        if(people==people1){
+            System.out.println(people.hashCode());
+            System.out.println(people1.hashCode());
+        }else {
+
+        }
+
 
     }
 
 
 }
-//
-//class TeatA{
-//
-//
-//
-////    public static void main(String[] args) {
-////
-////
-////            TeatA.method();
-////    }
-//}
+
