@@ -34,4 +34,11 @@ public class TestMap {
         n |= n >>> 16;
         return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
     }
+
+    /***
+     *  HashMapput方法
+     *
+     *
+     */
+    
 }

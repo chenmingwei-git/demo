@@ -11,7 +11,9 @@ import java.util.Map;
 public class LeetCode {
 
     public static void main(String[] args) {
-        int s = lengthOfLongestSubstring("abcdcdaa");
+//        int s = lengthOfLongestSubstring("abcdcdaa");
+
+        int s = tar(new int[]{1,2,3,2,1});
         System.out.println(s);
 
     }
@@ -50,6 +52,18 @@ public class LeetCode {
             map.put(s.charAt(end), end + 1);
         }
         return ans;
+    }
+
+    /**
+     *给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+     * eg : 输入 [1,2,3,2,1] 输出 : 3
+     */
+    static int tar(int[] num){
+      int as =0;
+        for(Integer integer:num){
+            as^=integer;
+        }
+        return as;
     }
 
 }

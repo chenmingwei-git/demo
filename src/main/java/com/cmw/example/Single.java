@@ -1,5 +1,11 @@
 package com.cmw.example;
 
+
+/**
+ * @description:  单例
+ * @author: cmw
+ * @data: 2021/8/11
+ */
 //饿汉模式 线程安全的
 public class Single {
     private static Single o= new Single();
