@@ -1,4 +1,11 @@
-package com.cmw.example;
+package com.cmw.suanfa.sort;
+
+
+/**
+ * @description:  二分查找
+ * @author: cmw
+ * @data: 2021/8/11
+ */
 
 //二分查找
 public class Lookup {

@@ -1,11 +1,14 @@
-package com.cmw.jdkProxy;
+package com.cmw.shejimoshi.proxy.staticProxy;
+
+import org.aspectj.lang.annotation.Aspect;
 
 /**
  * @autor:
  * @create:
- * @description:  真实要访问的对象
+ * @description: 静态代理: 真实要访问的目标对象
  */
 
+@Aspect
 public class LaoZong implements GongNeng{
 
     @Override

@@ -1,4 +1,4 @@
-package com.cmw.factory;
+package com.cmw.shejimoshi.factory;
 
 /**
  * @autor: Mr.Chen

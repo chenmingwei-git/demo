@@ -1,4 +1,4 @@
-package com.cmw.cglibProxy;
+package com.cmw.shejimoshi.proxy.cglibProxy;
 
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;

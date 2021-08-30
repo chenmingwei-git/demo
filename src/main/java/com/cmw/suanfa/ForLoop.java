@@ -1,4 +1,4 @@
-package com.cmw.example;
+package com.cmw.suanfa;
 
 /**
  * @autor: Mr.Chen

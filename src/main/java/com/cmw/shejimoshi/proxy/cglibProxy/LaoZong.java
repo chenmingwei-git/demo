@@ -1,8 +1,5 @@
-package com.cmw.cglibProxy;
+package com.cmw.shejimoshi.proxy.cglibProxy;
 
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 /**
  * @autor:

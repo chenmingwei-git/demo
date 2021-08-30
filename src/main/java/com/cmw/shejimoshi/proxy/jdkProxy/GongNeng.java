@@ -1,4 +1,4 @@
-package com.cmw.jdkProxy;
+package com.cmw.shejimoshi.proxy.jdkProxy;
 
 /**
  * @autor:

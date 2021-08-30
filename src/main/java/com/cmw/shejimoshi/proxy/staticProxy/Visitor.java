@@ -1,4 +1,4 @@
-package com.cmw.staticProxy;
+package com.cmw.shejimoshi.proxy.staticProxy;
 
 /**
  * @autor:

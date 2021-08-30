@@ -1,4 +1,4 @@
-package com.cmw.example;
+package com.cmw.suanfa.sort;
 
 public class Sort {
     public static void main(String[] args) {
