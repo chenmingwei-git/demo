@@ -1,16 +1,8 @@
-package com.cmw.demo;
+package com.cmw;
 
-import com.cmw.beans.Cat;
-import com.cmw.concurrent.demo2.Demo;
-import com.cmw.springaop.MyAspect;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @autor:
@@ -20,7 +12,6 @@ import java.util.Map;
  */
 
 @SpringBootApplication
-@ComponentScan("com.cmw")
 public class DemoApplication {
 
  /*   @Bean(name ="myAspect")

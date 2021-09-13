@@ -3,6 +3,7 @@ package com.cmw.tools;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * @description:  当一个类实现了这个接口（ApplicationContextAware）之后，
@@ -10,6 +11,7 @@ import org.springframework.context.ApplicationContextAware;
  * @author: cmw
  * @data: 2021/8/11
  */
+@Component
 public class AppilicationUtil implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
