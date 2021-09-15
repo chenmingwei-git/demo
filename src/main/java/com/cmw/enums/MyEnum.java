@@ -9,7 +9,8 @@ public enum MyEnum {
 
     SUCCESS("0","成功"),
     FAIL("1","失败"),
-    UNKNOW("2","状态未知");
+    UNKNOW("2","状态未知"),
+    ;
     private String value;
 
     private String name;

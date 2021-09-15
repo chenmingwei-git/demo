@@ -320,12 +320,10 @@ public class PubCheckFun {
 
             if (monthNow <= monthBirth) {
                 if (monthNow == monthBirth) {
-                    // monthNow==monthBirth
                     if (dayOfMonthNow < dayOfMonthBirth) {
                         age--;
                     }
                 } else {
-                    // monthNow>monthBirth
                     age--;
                 }
             }
@@ -336,10 +334,10 @@ public class PubCheckFun {
     }
 
     /**
-     * 计算年龄方法（出生日期 到 当前日期）
+     * 计算客户年龄
      *
-     * @Param 生日
-     * @Return 年龄
+     * @param birthday-日期字符串
+     * @return
      */
     public static int calculateAge(String birthday) {
         int age = 0;
@@ -363,6 +361,9 @@ public class PubCheckFun {
                     age = age - 1;
                 }
             }
+        }
+        if(age<0){
+            age=0;
         }
         return age;
     }
