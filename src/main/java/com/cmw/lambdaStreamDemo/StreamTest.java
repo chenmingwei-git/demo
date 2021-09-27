@@ -3,10 +3,7 @@ package com.cmw.lambdaStreamDemo;
 import com.cmw.pojo.People;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -96,11 +93,11 @@ public class StreamTest {
         Student s2 = new Student();
         s1.setAge(1);
         s1.setName("第一个");
-        s1.setScore("就是好");
+        s1.setScore("88");
 
         s2.setAge(2);
         s2.setName("第二个");
-        s2.setScore("也不错");
+        s2.setScore("99");
 
         List<Student> listStudent =new ArrayList<>();
         listStudent.add(s1);
@@ -108,6 +105,10 @@ public class StreamTest {
 
         List<String> nameList = listStudent.stream().map(t->t.getName()).collect(Collectors.toList());
         nameList.stream().forEach(System.out::println);
+
+        //输出学生中的姓名和分数
+        Map<String,String>  map = listStudent.stream().collect(Collectors.toMap(Student::getName,Student::getScore));
+        System.out.println(map);
 
     }
 }
