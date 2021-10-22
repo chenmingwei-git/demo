@@ -93,22 +93,33 @@ public class StreamTest {
         Student s2 = new Student();
         s1.setAge(1);
         s1.setName("第一个");
-        s1.setScore("88");
+        s1.setScore("11");
 
         s2.setAge(2);
         s2.setName("第二个");
-        s2.setScore("99");
+        s2.setScore("22");
 
         List<Student> listStudent =new ArrayList<>();
         listStudent.add(s1);
         listStudent.add(s2);
 
-        List<String> nameList = listStudent.stream().map(t->t.getName()).collect(Collectors.toList());
-        nameList.stream().forEach(System.out::println);
+//        List<String> nameList = listStudent.stream().map(t->t.getName()).collect(Collectors.toList());
+//        nameList.stream().forEach(System.out::println);
+//
+//        //输出学生中的姓名和分数
+//        Map<String,String>  map = listStudent.stream().collect(Collectors.toMap(Student::getName,Student::getScore));
+//        System.out.println(map);
 
-        //输出学生中的姓名和分数
-        Map<String,String>  map = listStudent.stream().collect(Collectors.toMap(Student::getName,Student::getScore));
-        System.out.println(map);
+        Student s3 = new Student();
+        s3.setAge(3);
+        s3.setName("第一个");
+        s3.setScore("33");
+        listStudent.add(s3);
+        //按照name进行去重
+        List <Student> list2 = listStudent.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(
+                ()->new TreeSet<>(Comparator.comparing(Student::getName))),ArrayList::new));
+        System.out.println(list2);
+
 
     }
 }
