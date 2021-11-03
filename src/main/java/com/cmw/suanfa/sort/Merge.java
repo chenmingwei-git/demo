@@ -1,6 +1,5 @@
 package com.cmw.suanfa.sort;
 
-import java.util.Arrays;
 
 /**
  * @description: 归并排序 两种思路 sortArray 和 sortArray2
@@ -10,60 +9,84 @@ import java.util.Arrays;
 public class Merge {
 
     public static void main(String[] args) {
-        int[] s = new int[]{6,3,2,7,1,3,5,4};
-        sortArray(s);
+        /**
+         * 归并排序中的单组排序
+         */
+        int[] arr = new int[]{14, 12, 15, 13, 11, 16, 10};
+        int[] newArr = sort(arr, new int[7], 0, arr.length - 1);
+
+        /**
+         * 将两个有序数组合并为一个有序数组
+         */
+
+        int[] arr1 = new int[]{2, 3, 6, 8};
+        int[] arr2 = new int[]{1, 4, 5, 7};
+        int[] newArrs = sort(arr1, arr2);
+
+    }
+
+    /**
+     * 归并排序之单个数组排序
+     *
+     * @param arr
+     * @param result
+     * @param start
+     * @param end
+     * @return
+     */
+    public static int[] sort(int[] arr, int[] result, int start, int end) {
+        if (start >= end)
+            return null;
+        int len = end - start, mid = (len >> 1) + start;
+        int start1 = start, end1 = mid;
+        int start2 = mid + 1, end2 = end;
+        sort(arr, result, start1, end1);
+        sort(arr, result, start2, end2);
+        int k = start;
+        //进行比较。注意这里++是后执行的，先取出来数组中的值然后++
+        while (start1 <= end1 && start2 <= end2)
+            result[k++] = arr[start1] < arr[start2] ? arr[start1++] : arr[start2++];
+        //将每个分组剩余的进行复制
+        while (start1 <= end1)
+            result[k++] = arr[start1++];
+        //将每个分组剩余的进行复制
+        while (start2 <= end2)
+            result[k++] = arr[start2++];
+        for (k = start; k <= end; k++)
+            arr[k] = result[k];
+        return result;
     }
 
 
-    public static int[] sortArray(int[] nums) {
-        sort(0, nums.length - 1, nums);
-        return nums;
-    }
+    /**
+     * 归并排序之两个有序数组合并为一个
+     *
+     * @param arr1
+     * @param arr2
+     * @return
+     */
+    public static int[] sort(int[] arr1, int[] arr2) {
+        int[] newArr = new int[arr1.length + arr2.length];
+        int i = 0, j = 0, k = 0;
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] < arr2[j]) {
 
-    // 分：递归二分
-    private static void sort(int l, int r, int[] nums) {
-        if (l >= r) return;
+                newArr[k] = arr1[i];
+                i++;
+                k++;
+            } else {
 
-        int mid = (l + r) / 2;
-        sort(l, mid, nums);
-        sort(mid + 1, r, nums);
-        merge(l, mid, r, nums);
-    }
-
-
-    public int[] sortArray2(int[] nums) {
-        int n = nums.length;
-        // sz= 1,2,4,8 ... 排序
-        for (int sz = 1; sz < n; sz *= 2) {
-            // 对 arr[i...i+sz-1] 和 arr[i+sz...i+2*sz-1] 进行归并
-            for (int i = 0; i < n - sz; i += 2*sz ) {
-                merge(i, i + sz - 1, Math.min(i+sz+sz-1, n-1), nums);
+                newArr[k] = arr2[j];
+                j++;
+                k++;
             }
         }
-        return nums;
+
+        while (i < arr1.length)
+            newArr[k++] = arr1[i++];
+        while (j < arr2.length)
+            newArr[k++] = arr2[j++];
+        return newArr;
     }
 
-
-    // 治：将nums[l...mid]和nums[mid+1...r]两部分进行归并
-    private static void merge(int l, int mid, int r, int[] nums) {
-        int[] aux = Arrays.copyOfRange(nums, l, r + 1);
-
-        int lp =l, rp = mid + 1;
-
-        for (int i = lp; i <= r; i ++) {
-            if (lp > mid) {                // 如果左半部分元素已经全部处理完毕
-                nums[i] = aux[rp - l];
-                rp ++;
-            }  else if (rp > r) {          // 如果右半部分元素已经全部处理完毕
-                nums[i] = aux[lp - l];
-                lp ++;
-            } else if (aux[lp-l] > aux[rp - l]) {     // 左半部分所指元素 > 右半部分所指元素
-                nums[i] = aux[rp - l];
-                rp ++;
-            } else {                                  // 左半部分所指元素 <= 右半部分所指元素
-                nums[i] = aux[lp - l];
-                lp ++;
-            }
-        }
-    }
 }
