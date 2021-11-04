@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cmw.mybatis.mapper.HumanInfoMapper">
+    <resultMap id="BaseResultMap" type="com.cmw.mybatis.entity.HumanInfo">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="id_no" jdbcType="VARCHAR" property="idNo" />
+        <result column="age" jdbcType="VARCHAR" property="age" />
+        <result column="address" jdbcType="VARCHAR" property="address" />
+        <result column="remark" jdbcType="CHAR" property="remark" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from human_info
+    </select>
+</mapper>

@@ -23,7 +23,7 @@ public class MyAspect {
      *
      * 定义完该方法切点,后续方法只需要引用该方法名 就可以引用该切点
      * */
-    @Pointcut("execution(* com.cmw.springaop.UserServiceImpl.printUser(..))")
+    @Pointcut("execution(* com.cmw.springaop.BaseServiceImpl.printUser(..))")
     public void pointCut(){
 
     }
