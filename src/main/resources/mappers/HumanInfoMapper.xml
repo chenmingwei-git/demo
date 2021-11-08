@@ -14,4 +14,11 @@
     <select id="findAll" resultMap="BaseResultMap">
         select * from human_info
     </select>
+    <update id="updateByPK" parameterType="java.lang.Integer">
+        update human_info set address ='河南信阳' where id = #{id};
+    </update>
+
+    <update id="updateByPK2" parameterType="java.lang.Integer">
+        update human_info set remark ='小' where id = #{id};
+    </update>
 </mapper>

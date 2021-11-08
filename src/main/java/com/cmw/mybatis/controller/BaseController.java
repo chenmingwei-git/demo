@@ -4,6 +4,8 @@ import com.cmw.mybatis.entity.HumanInfo;
 import com.cmw.mybatis.server.HumanInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,5 +24,10 @@ public class BaseController {
     @RequestMapping("/findAll")
     public List<HumanInfo> findAll(){
         return humanInfoService.findAll();
+    }
+
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public void updateBy(@RequestParam int id){
+        humanInfoService.updateByPK(id);
     }
 }

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface HumanInfoService {
     List<HumanInfo> findAll();
+
+    void updateByPK(int id);
 }

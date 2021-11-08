@@ -5,4 +5,8 @@ import java.util.List;
 
 public interface HumanInfoMapper {
     List<HumanInfo> findAll();
+
+    void updateByPK(int id);
+
+    void updateByPK2(int id);
 }
