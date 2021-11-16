@@ -26,7 +26,7 @@ public class BaseController {
         return humanInfoService.findAll();
     }
 
-    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    @RequestMapping(value = "/update",method = RequestMethod.GET)
     public void updateBy(@RequestParam int id){
         humanInfoService.updateByPK(id);
     }

@@ -33,4 +33,6 @@ public class HumanInfoServiceImpl implements HumanInfoService {
         int s = 1/0;
         humanInfoMapper.updateByPK2(id);
     }
+
+
 }
