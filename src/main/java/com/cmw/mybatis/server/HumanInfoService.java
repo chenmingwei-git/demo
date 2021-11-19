@@ -8,4 +8,5 @@ public interface HumanInfoService {
     List<HumanInfo> findAll();
 
     void updateByPK(int id);
+
 }
