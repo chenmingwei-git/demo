@@ -129,3 +129,25 @@ class Student{
     private String name;
     private String score;
 }
+
+@Data
+class VTwo{
+    private String judeType;
+
+
+    private int getIndex(VTwo x){
+        if(x.getJudeType().equals("Error")){
+            return 1;
+        }else if(x.getJudeType().equals("Exception")){
+            return 2;
+        }else{
+            return 3;
+        }
+    }
+
+
+    private void sorted(List<VTwo> vTwos){
+        vTwos.stream().sorted(Comparator.comparingInt(this::getIndex)).collect(Collectors.toList());
+
+    }
+}
