@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 public class XxlJobConfig {
     private Logger logger = LoggerFactory.getLogger(XxlJobConfig.class);
 
-    @Value("${xxl.job.admin.addresses}")
+    @Value("${xxl.job.admin.addresses}")//需要单独运行 xxl-job-admin服务
     private String adminAddresses;
 
     @Value("${xxl.job.accessToken}")
@@ -45,14 +45,14 @@ public class XxlJobConfig {
     public XxlJobSpringExecutor xxlJobExecutor() {
         logger.info(">>>>>>>>>>> xxl-job config init.");
         XxlJobSpringExecutor xxlJobSpringExecutor = new XxlJobSpringExecutor();
-        xxlJobSpringExecutor.setAdminAddresses(adminAddresses);
-        xxlJobSpringExecutor.setAppname(appname);
-        xxlJobSpringExecutor.setAddress(address);
-        xxlJobSpringExecutor.setIp(ip);
-        xxlJobSpringExecutor.setPort(port);
-        xxlJobSpringExecutor.setAccessToken(accessToken);
-        xxlJobSpringExecutor.setLogPath(logPath);
-        xxlJobSpringExecutor.setLogRetentionDays(logRetentionDays);
+//        xxlJobSpringExecutor.setAdminAddresses(adminAddresses);
+//        xxlJobSpringExecutor.setAppname(appname);
+//        xxlJobSpringExecutor.setAddress(address);
+//        xxlJobSpringExecutor.setIp(ip);
+//        xxlJobSpringExecutor.setPort(port);
+//        xxlJobSpringExecutor.setAccessToken(accessToken);
+//        xxlJobSpringExecutor.setLogPath(logPath);
+//        xxlJobSpringExecutor.setLogRetentionDays(logRetentionDays);
 
         return xxlJobSpringExecutor;
     }
