@@ -36,7 +36,7 @@ public class CustomxxlHandler extends XxlJobBaseTimer{
                 XxlJobHelper.handleFail("xxljob执行定时任务执行异常,quartzTimerName未填写");
                 return ReturnT.FAIL;
             }
-            Class<?> aClass = Class.forName("com.qinjia.cpu.timer." + quartzTimerName);
+            Class<?> aClass = Class.forName("com.cmw.xxljob.timer." + quartzTimerName);
             Method doJob = getMethod(aClass, "doJob");
 //            Method mm = aClass.getDeclaredMethod("doJob", jobParams)
             logger.info("xxljob执行定时任务开始，任务类名：" + quartzTimerName);
