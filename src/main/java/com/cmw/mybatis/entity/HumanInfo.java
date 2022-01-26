@@ -29,4 +29,8 @@ public class HumanInfo extends BaseEntity implements Serializable {
 
     private String remark;
 
+    private int lagDay;
+
+    private Integer testDay;
+
 }

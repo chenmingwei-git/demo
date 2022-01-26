@@ -27,11 +27,16 @@ public class HumanInfoServiceImpl implements HumanInfoService {
     }
 
     @Override
-    @Transactional
+    public void updateByPK2(int id) {
+        humanInfoMapper.updateByPK2(id);
+    }
+
+    @Override
+    @Transactional()
     public void updateByPK(int id) {
+        updateByPK2(id);
         humanInfoMapper.updateByPK(id);
         int s = 1/0;
-        humanInfoMapper.updateByPK2(id);
     }
 
 

@@ -9,4 +9,5 @@ public interface HumanInfoService {
 
     void updateByPK(int id);
 
+    void updateByPK2(int id);
 }
