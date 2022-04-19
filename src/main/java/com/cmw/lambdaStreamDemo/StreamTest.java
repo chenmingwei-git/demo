@@ -91,6 +91,8 @@ public class StreamTest {
 
         Student s1 = new Student();
         Student s2 = new Student();
+        Student s3 = new Student();
+        Student s4 = new Student();
         s1.setAge(1);
         s1.setName("第一个");
         s1.setScore("11");
@@ -99,9 +101,19 @@ public class StreamTest {
         s2.setName("第二个");
         s2.setScore("22");
 
+        s3.setAge(3);
+        s3.setName("第一个");
+        s3.setScore("33");
+
+        s4.setAge(4);
+        s4.setName("第一个");
+        s4.setScore("44");
+
         List<Student> listStudent =new ArrayList<>();
         listStudent.add(s1);
         listStudent.add(s2);
+        listStudent.add(s3);
+        listStudent.add(s4);
 
 //        List<String> nameList = listStudent.stream().map(t->t.getName()).collect(Collectors.toList());
 //        nameList.stream().forEach(System.out::println);
@@ -110,16 +122,20 @@ public class StreamTest {
 //        Map<String,String>  map = listStudent.stream().collect(Collectors.toMap(Student::getName,Student::getScore));
 //        System.out.println(map);
 
-        Student s3 = new Student();
-        s3.setAge(3);
-        s3.setName("第一个");
-        s3.setScore("33");
-        listStudent.add(s3);
-        //按照name进行去重
-        List <Student> list2 = listStudent.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(
-                ()->new TreeSet<>(Comparator.comparing(Student::getName))),ArrayList::new));
-        System.out.println(list2);
+//        Student s3 = new Student();
+//        s3.setAge(3);
+//        s3.setName("第一个");
+//        s3.setScore("33");
+//        listStudent.add(s3);
+//        //按照name进行去重
+//        List <Student> list2 = listStudent.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(
+//                ()->new TreeSet<>(Comparator.comparing(Student::getName))),ArrayList::new));
+//        System.out.println(list2);
 
+        Map<String, List<Student>> collect = listStudent.stream().collect(Collectors.groupingBy(listStudents -> listStudents.getName()));
+        Collection<List<Student>> values = collect.values();
+
+        System.out.println();
 
     }
 }

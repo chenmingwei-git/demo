@@ -214,9 +214,9 @@ public class DemoApplicationTests {
 //        Matcher match=pattern.matcher("江苏省苏州市吴中区临湖镇灵湖村吴舍()吴舍104号");
 //        System.out.println(match.matches());
 
-        String regEx ="(([0-9]{1,4}))(\\.(\\d){1,2})?$";
+        String regEx ="^30000(\\.((0){1,2})?)?|(([12](\\d){1,4}))(\\.((\\d){1,2})?)?|((\\d){1,4})(\\.((\\d){1,2})?)?$";
         Pattern pattern=Pattern.compile(regEx); // 判断小数点后2位的数字的正则表达式
-        Matcher match=pattern.matcher("0617.09");
+        Matcher match=pattern.matcher("30000.01");
         System.out.println(match.matches());
 
 

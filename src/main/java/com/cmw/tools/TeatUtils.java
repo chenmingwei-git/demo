@@ -54,6 +54,7 @@ public class TeatUtils {
             // 取出这个字节的低位，与0x0f与运算，得到一个0-15之间的数据，通过HEX.charAt(0-15)即为16进制数
             sb.append(HEX.charAt(b & 0x0f));
         }
+        System.out.println(sb.toString());
         return sb.toString();
 
     }
